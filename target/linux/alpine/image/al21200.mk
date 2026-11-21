@@ -43,6 +43,7 @@ define Device/checkpoint_l-71w
 		kmod-phy-marvell \
 		kmod-rtc-ds1307 \
 		kmod-usb3 \
+		kmod-usb-ledtrig-usbport \
 		kmod-usb-storage \
 		kmod-usb-xhci-pci-renesas \
 		wpad-basic-mbedtls
