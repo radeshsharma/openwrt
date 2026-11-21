@@ -86,6 +86,7 @@
 			function = LED_FUNCTION_WLAN;
 			color = <LED_COLOR_ID_GREEN>;
 			gpios = <&expander_u2 7 GPIO_ACTIVE_HIGH>;
+			linux,default-trigger = "phy0tpt";
 		};
 	};
 
