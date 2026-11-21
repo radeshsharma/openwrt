@@ -1,0 +1,15 @@
+#!/bin/sh
+# Internet LED: green when the internet is reachable, red when not.
+L=/sys/class/leds
+for d in $L/green:wan*; do G=$d/brightness; done
+for d in $L/red:wan*; do R=$d/brightness; done
+
+while :; do
+	if ping -c1 -W2 1.1.1.1 >/dev/null 2>&1 ||
+	   ping -c1 -W2 8.8.8.8 >/dev/null 2>&1; then
+		echo 1 > $G; echo 0 > $R
+	else
+		echo 0 > $G; echo 1 > $R
+	fi
+	sleep 5
+done
